@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
-import { setCurrentStep } from "./store/slices"
+import { setCurrentStep, setSteps } from "./store/slices"
 import { INTERVAL_TIME } from "./constants"
 
 import Controls from "./components/Controls"
@@ -14,10 +14,12 @@ const Playground: React.FC = () => {
   const refreshIntervalId = useRef<ReturnType<typeof setInterval> | null>(null) //переменная для паузы
 
   const [isTimerActive, setIsTimerActive] = useState<boolean>(false) //не выносим в Controls потому что эти значения будем использовать в других  местах
+
   useEffect(() => {
     if (isTimerActive) {
       refreshIntervalId.current = setInterval(() => {
         dispatch(setCurrentStep())
+        dispatch(setSteps())
       }, INTERVAL_TIME)
     } else {
       clearInterval(refreshIntervalId.current as NodeJS.Timeout)
