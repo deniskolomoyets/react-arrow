@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
+
 import { setCurrentStep } from "./store/slices"
 import { INTERVAL_TIME } from "./constants"
+
 import Controls from "./components/Controls"
+import RandomKeys from "./components/RandomKeys"
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground) //достаем стейт из редьюсера(обьявляли его в store)
@@ -32,6 +35,7 @@ const Playground: React.FC = () => {
         isTimerActive={isTimerActive}
         setIsTimerActive={setIsTimerActive}
       />
+      <RandomKeys isTimerActive={isTimerActive} />
     </div>
   )
 }
