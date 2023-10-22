@@ -18,6 +18,7 @@ export const playgroundSlice = createSlice({
 
       state.steps.push({
         currrentValue: ARR_ARROW_CODES[randomKeys],
+        enteredValue: null,
       }) //при каждом шаге таймера будет создаваться элемент массива, в который будет помещаться стрелка
     },
   },
