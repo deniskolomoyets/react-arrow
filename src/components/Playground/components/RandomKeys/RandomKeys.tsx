@@ -12,8 +12,8 @@ const RandomKeys: React.FC<IRandomKeysProps> = (props) => {
 
   return (
     <div>
-      {state.steps.map((element, index) => (
-        <span key={index}>
+      {state.steps.map((element) => (
+        <span key={element.step}>
           {MAP_ARROW_CODES[element.currrentValue as keyof IMapArrowCodes]}
         </span> // перебираем степс, на каждую итерацию счетчика будем добавлять элемент массива, в котором будет храниться currentValue(который представляет собой рандомный ключ для стрелки)(обращаемся по ключу и получаем стрелку)
       ))}
