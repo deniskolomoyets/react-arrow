@@ -58,9 +58,15 @@ export const playgroundSlice = createSlice({
         }
       }
     },
+    resetStore: () => initialState, //присвоили инишл стейт вместо того который был
   },
 })
 
-export const { setCurrentStep, setSteps, setEnteredValue, setUnseccess } =
-  playgroundSlice.actions
+export const {
+  setCurrentStep,
+  setSteps,
+  setEnteredValue,
+  setUnseccess,
+  resetStore,
+} = playgroundSlice.actions
 export default playgroundSlice.reducer
