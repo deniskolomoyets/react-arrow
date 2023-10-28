@@ -1,3 +1,5 @@
+import cn from "classnames"
+
 import {
   Button as MaterialButton,
   ButtonProps as MaterialButtonProps,
@@ -10,14 +12,14 @@ export interface IButtonProps extends MaterialButtonProps {
 }
 
 const Button: React.FC<IButtonProps> = (props) => {
-  const { children } = props
+  const { children, className = "" } = props
 
   return (
     <MaterialButton
       variant="contained"
       size="small"
-      className={styles.button}
       {...props}
+      className={cn(styles.button, className)} //(cn)use library classnames fro using two props
     >
       {children}
     </MaterialButton>
