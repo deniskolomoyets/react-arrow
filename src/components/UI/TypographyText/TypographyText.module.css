@@ -1,0 +1,6 @@
+.text {
+  font-size: 24px;
+  margin-top: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+
+}

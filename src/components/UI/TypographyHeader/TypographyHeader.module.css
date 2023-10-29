@@ -1,7 +1,7 @@
 .text {
     margin: 0;
     margin-bottom: var(--spacing-medium);
-    font-size: 18px;
+    font-size: 30px;
     color:var(--color-gray-dark);
 
 

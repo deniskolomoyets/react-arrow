@@ -1,1 +1,1 @@
-export { default } from "./Descriptiom"
+export { default } from "./Description"
