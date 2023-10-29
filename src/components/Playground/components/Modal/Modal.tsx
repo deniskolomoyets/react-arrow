@@ -1,4 +1,6 @@
-// import styles from "./Modal.module.css"
+import styles from "./Modal.module.css"
+import cn from "classnames"
+import { Modal as MaterialModal } from "@mui/material"
 
 import { useAppDispatch } from "../../../../app/hooks"
 import { resetStore } from "../../store/slices"
@@ -20,11 +22,19 @@ const Modal: React.FC<IModalProps> = (props) => {
     setIsShowModal(false)
   }
   return (
-    <div>
-      <h3>Modal</h3>
-      <ResultMessage isSuccessEndGame={isSuccessEndGame} />
-      <Button onClick={handleClose}>Start New Game</Button>
-    </div>
+    <MaterialModal open onClose={handleClose} className={styles.wrapper}>
+      <div
+        className={cn(
+          styles.container,
+          isSuccessEndGame ? styles.modalSuccess : styles.modalUnsuccess,
+        )} //какой стиль применять к модалке в зависимости от игры
+      >
+        <ResultMessage isSuccessEndGame={isSuccessEndGame} />
+        <Button onClick={handleClose} className={styles.button}>
+          Start New Game
+        </Button>
+      </div>
+    </MaterialModal> //требует возле себя флаг(open)
   )
 }
 

@@ -62,6 +62,7 @@ const Playground: React.FC = () => {
       <KeyPressed isTimerActive={isTimerActive} />
       <Score />
       <Description />
+
       {isShowModal && (
         <Modal
           setIsShowModal={setIsShowModal}
