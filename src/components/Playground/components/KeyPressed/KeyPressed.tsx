@@ -6,14 +6,18 @@ import { MAP_ARROW_CODES } from "../../constants"
 import { useAppDispatch } from "../../../../app/hooks"
 import { useKeyPressedElement } from "./hooks"
 import { TypographyHeader, TypographyText } from "../../../UI"
+
 export interface IKeyPressedProps {
   isTimerActive: boolean
 }
 
 const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
   const { isTimerActive } = props
+
   const dispatch = useAppDispatch()
+
   const keyPressedElement = useKeyPressedElement()
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (MAP_ARROW_CODES.hasOwnProperty(e.key) && isTimerActive) {

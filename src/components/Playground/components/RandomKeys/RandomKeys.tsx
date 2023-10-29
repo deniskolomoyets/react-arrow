@@ -4,8 +4,6 @@ import { TypographyHeader } from "../../../UI"
 import RandomArrows from "./components/RandomArrows"
 import WelcomText from "./components/WelcomText"
 
-// import styles from "./RandomKeys.module.css"
-
 export interface IRandomKeysProps {
   isTimerActive: boolean
 }

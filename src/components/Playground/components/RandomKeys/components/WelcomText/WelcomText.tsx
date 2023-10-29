@@ -1,6 +1,6 @@
-// import styles from "./WelcomText.module.css"
-
 import { TypographyText } from "../../../../../UI"
+import stylesCommon from "../../RandomKeys.module.css"
+import styles from "./WelcomText.module.css"
 
 export interface IWelcomTextProps {
   isTimerActive: boolean
@@ -9,7 +9,11 @@ export interface IWelcomTextProps {
 const WelcomText: React.FC<IWelcomTextProps> = (props) => {
   const { isTimerActive } = props
   if (isTimerActive) {
-    return <span>Loading...</span>
+    return (
+      <div className={stylesCommon.wrapper}>
+        <span className={stylesCommon.icon}>Loading</span>
+      </div>
+    )
   }
   return (
     <TypographyText>
