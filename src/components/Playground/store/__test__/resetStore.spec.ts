@@ -1,8 +1,16 @@
-// import playgroundReducer, { initialState } from "../slices"
+import playgroundReducer, {
+  initialState,
+  resetStore,
+  setCurrentStep,
+} from "../slices"
 
-// describe("reducer setSomeReducer", () => {
-//   it("check setSomeReducer", () => {
-//     const state = playgroundReducer({}, {})
-//     expect().toEqual()
-//   })
-// })
+describe("reducer resetStore", () => {
+  it("check resetStore", () => {
+    const setCurrentStepState = playgroundReducer(
+      initialState,
+      setCurrentStep(),
+    )
+    const resetStoreState = playgroundReducer(setCurrentStepState, resetStore())
+    expect(resetStoreState).toEqual(initialState)
+  })
+})
