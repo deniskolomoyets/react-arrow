@@ -20,14 +20,14 @@ export const playgroundSlice = createSlice({
 
       state.steps.push({
         step: state.currentStep,
-        currrentValue: ARR_ARROW_CODES[randomKeys],
+        currentValue: ARR_ARROW_CODES[randomKeys],
         enteredValue: null,
         success: null,
       }) //при каждом шаге таймера будет создаваться элемент массива, в который будет помещаться стрелка
     },
     setEnteredValue: (state, action) => {
       const step = state.steps[state.currentStep - 1] //сохраняет объект который пришел в последнем значении
-      const isSuccess = step.currrentValue === action.payload //cравниваем текущее значение с поступающим
+      const isSuccess = step.currentValue === action.payload //cравниваем текущее значение с поступающим
       if (state.steps.length) {
         if (step.enteredValue === null) {
           state.steps[state.currentStep - 1] = {

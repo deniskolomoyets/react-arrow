@@ -20,7 +20,7 @@ const RandomArrows: React.FC = () => {
     <div className={stylesCommon.wrapper}>
       {state.steps.map((element) => (
         <span key={element.step} className={getStylesRandomKeys(element)}>
-          {MAP_ARROW_CODES[element.currrentValue as keyof IMapArrowCodes]}
+          {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
         </span> // перебираем степс, на каждую итерацию счетчика будем добавлять элемент массива, в котором будет храниться currentValue(который представляет собой рандомный ключ для стрелки)(обращаемся по ключу и получаем стрелку)
       ))}
     </div>

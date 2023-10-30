@@ -1,6 +1,6 @@
 export interface IPlaygroundStepsState {
   step: number
-  currrentValue: string | null
+  currentValue: string | null
   enteredValue: string | null
   success: boolean | null
 } //описываем тип который будет храниться в массиве со стрелками
